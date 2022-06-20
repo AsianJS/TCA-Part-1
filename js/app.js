@@ -33,7 +33,7 @@ if(data){
 function loadList(array){
   array.forEach(function(item){
     addToDo(item.name, item.id, item.done, item.trash);
-  })
+  });
 }
 
 // clear the local storage
@@ -115,4 +115,7 @@ list.addEventListener("click", function(event){
   }else if(elementJob == "delete"){
     removeToDo(element);
   }
+  // get item from localstorage ( this code must be added where the LIST array is updated)
+  localStorage.setItem("TODO", JSON.stringify(LIST));
+
 });
